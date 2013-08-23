@@ -6,7 +6,7 @@ puts "Type in a letter to guess the following word or phrase\n\n"
 
 @guessed_letters = []
 
-def hide_letters()
+def hide_letters
 	revealed_word = ""
 	@word.each_char.each do |char|
 		if @guessed_letters.include?(char.downcase) || !char.match(/[a-zA-Z]/)
