@@ -7,15 +7,15 @@ puts "Type in a letter to guess the following word or phrase\n\n"
 @guessed_letters = []
 
 def hide_letters
-	revealed_word = ""
+	revealed = ""
 	@word.each_char.each do |char|
 		if @guessed_letters.include?(char.downcase) || !char.match(/[a-zA-Z]/)
-			revealed_word += char
+			revealed += char
 		else
-			revealed_word += '_'
+			revealed += '_'
 		end
 	end
-	revealed_word
+	revealed
 end
 
 revealed = hide_letters
@@ -43,6 +43,7 @@ while @word != revealed do
 	else
 		@guessed_letters << guess
 		puts @word.downcase.include?(guess) ? "Good guess!" : "Sorry, wrong letter"
+
 	end
 
 	revealed = hide_letters
